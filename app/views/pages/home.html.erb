@@ -1,0 +1,40 @@
+<div class="container">
+
+  <%= render 'pages/home/jumbotron' %>
+
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-md-3 col-sm-6">
+        <div class="user-card">
+          <div class="user-avatar">
+            <img id="user-avatar<%= user.id %>" src="http://i.pravatar.cc/60" alt="profile image">
+          </div>
+          <div class="user-info">
+            <h5><%= user.first_name %> <%= user.last_name %></h5>
+            <h6><%= user.level %></h6>
+          </div>
+          <div class="user-links">
+            <div class="icons">
+              <%= link_to user.github_link, class:'github-icon' do %>
+                <i class="fab fa-github-square"></i>
+              <% end %>
+
+              <%= link_to '#', class:'call-icon', data: {id: user.id, name: user.first_name} do %>
+                <i class="fas fa-video"></i>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+
+
+
+<%= render 'pages/home/session_modal' %>
+<%= render 'pages/home/sender_notif_modal' %>
+<%= render 'pages/home/receiver_notif_modal' %>

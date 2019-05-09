@@ -1,0 +1,12 @@
+console.log("Frederic Got the token to the client: <%= @token %>, as well as the session_id: <%= @session_id %>, and the api_key: <%= @api_key %>");
+
+var session = OT.initSession("<%= @api_key %>", "<%= @session_id %>");
+console.log(session);
+
+session.connect("<%= @token %>", function(error) {
+  if (error) {
+    console.log("Error connecting: MBEA", error.name, error.message);
+  } else {
+    console.log("Connected to the session.");
+  }
+});

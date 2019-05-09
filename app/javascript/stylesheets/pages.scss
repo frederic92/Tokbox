@@ -1,0 +1,322 @@
+@import "./variables";
+
+
+.notice, .danger {
+  margin: 0px;
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+
+#call_notification {
+  display: none;
+  background-color: green;
+  .notification_message {
+    h5 {
+      color: white;
+    }
+  }
+  .call_notification_btn {
+    .answer_btn {
+      padding: 5px 10px;
+      text-decoration: none;
+      color: white;
+      border-radius: 5px;
+      border-color: blue;
+    }
+  }
+}
+
+#publisher, #subscriber {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+}
+
+#publisher {
+    border: 2px solid green;
+}
+#subscriber {
+    border: 2px solid red;
+}
+
+
+////////// ================== AUTH FORM ============//////////////
+
+.form-block {
+  @include box-shadow;
+  margin-top: 50px;
+  padding: 25px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  h1 {
+    text-align: center;
+    font-weight: 700;
+  }
+  .form-body {
+    label, em {
+      color: #8A8D91;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    input {
+      box-shadow: none;
+      background-color: #E8EBED;
+      &:focus {
+        background-color: #ffffff;
+        border: 2px solid #E8EBED;
+      }
+    }
+    input.btn {
+      @include btn;
+    }
+    br {
+      //display: none;
+    }
+    a {
+      color: #8A8D91;
+      font-size: 14px;
+    }
+    .alert-error {
+      background-color: red;
+      color: #ffffff;
+      .close {
+        color: #ffffff;
+        margin-left: 3px;
+      }
+    }
+
+  }
+}
+//========================== Auth form =====================
+
+
+
+
+
+//======================= NAVIGATION==================================
+
+.navbar {
+  background-color: #ffffff !important;
+  box-shadow: 0 5px 5px -5px #C8CBCC;
+  i {
+    font-size: 18px;
+    margin-right: 5px;
+    color: #6321E3;
+  }
+  .navbar-brand {
+    color: #ffffff !important;
+    font-weight: 500;
+    font-size: 24px;
+    margin-right: 0px;
+  }
+
+  .navbar-nav {
+    margin-left: 40px;
+  }
+
+  ul {
+    margin-bottom: 0px;
+    padding-left: 0px;
+    li {
+      float: right;
+      text-decoration: none;
+      display: inline-block;
+      a {
+        color: #981CEB;
+      }
+       img {
+        border-radius: 50%;
+        //margin-right: 95px;
+      }
+      .dropdown-menu {
+        padding: 0;
+        .dropdown-item {
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 500;
+          color: #000000;
+          &:hover {
+            background-color: #6321E3 !important;
+            color: #ffffff !important;
+            i {
+              color: #ffffff;
+            }
+          }
+          i {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+    .nav-item.auth {
+      margin-top: 3px;
+      margin-right: 5px;
+      .sign-in {
+        color: #6321E3;
+        font-weight: 700;
+      }
+      .sign-up {
+        background-color: #7B16FF;
+        color: #ffffff;
+        border-color: #7B16FF;
+        border-radius: 25px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+//======================= Navigation==================================
+
+// =================================JUMBOTRON====================================
+.jumbotron {
+    @include box-shadow;
+    margin-bottom: 0px !important;
+    padding: 30px;
+    margin-top: 40px;
+    background-color: #738CE6;
+    h3 {
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      font-weight: 500;
+      font-size: 32px;
+      color: #ffffff;
+    }
+    p {
+      font-size: 13px;
+      font-weight: 100;
+      line-height: 21px;
+      letter-spacing: 2px;
+      color: #ffffff;
+    }
+
+    a {
+      @include btn;
+      text-decoration: none;
+      margin-top: 20px !important;
+    }
+}
+ // ================================JUMBOTRON===============================
+
+//===================== Call Modal =============================
+
+.modal {
+  .modal-header {
+    .fas {
+      margin: 4px 0px 0px 10px;
+      color: green;
+    }
+    #session_id {
+      display: none;
+    }
+  }
+  .modal-footer {
+    .fas {
+      font-size: 18px;
+      color: green;
+    }
+  }
+
+}
+//==================== call modal ============================
+
+//==================== PROFILE MODAL ============================
+
+
+//==================== Profile Modal ============================
+
+//====================== USER CARD ===============================
+.user-card {
+  @include box-shadow;
+  margin: 25px 20px;
+  padding-bottom: 15px;
+  border-radius: 15px;
+  width: 200px;
+
+  .user-avatar {
+    padding: 20px 0px 10px 0px;
+    margin: auto;
+    width: 50%;
+    img {
+      width: 100%;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+    }
+  }
+  .user-info {
+    margin: auto;
+    width: 100%;
+    h5 {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    h6 {
+      text-align: center;
+      font-size: 14px;
+      color: #959DA5;
+    }
+  }
+  .user-links {
+    margin: auto;
+    width: 60%;
+    .icons {
+      text-align: center;
+      a.github-icon {
+        text-decoration: none;
+        color: black;
+        margin: 0px 20px;
+        i {
+          font-size: 20px;
+        }
+      }
+      a.call-icon {
+        text-decoration: none;
+        color: green;
+        margin: 0px 20px;
+        i {
+          font-size: 20px;
+        }
+      }
+   }
+
+ }
+}
+//====================== USER CARD ===============================
+
+#modal-body-session {
+  padding: 0px;
+  //position: absolute;
+  height: 400px;
+  .session {
+    background-color: #000000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    #subscriber {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      //bottom: 0px;
+      //right: 0px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid green;
+    }
+    #publisher {
+      position: absolute;
+      border: 1px solid red;
+      width: 30%;
+      height: 30%;
+      bottom: 0px;
+      right: 0px;
+      z-index: 1000;
+
+    }
+  }
+
+}
