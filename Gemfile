@@ -6,12 +6,12 @@ ruby '2.6.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0.beta3'
 
-gem 'jquery-rails'
+#gem 'jquery-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Devise for authentication
 gem 'devise'
-# Use opentok for peer to peer video calls
+# Use opentok for peer-to-peer video calls
 gem "opentok", "~> 3.1.0"
 
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
