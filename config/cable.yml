@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: redis://redistogo:20ac1d1aa5a77ab5571b15623eb6c660@tarpon.redistogo.com:9748/
   channel_prefix: Opentok_production
