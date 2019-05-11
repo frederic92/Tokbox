@@ -126,7 +126,9 @@
       a {
         color: #981CEB;
       }
-       img {
+      img {
+        height: 50px;
+        width: 50px;
         border-radius: 50%;
         //margin-right: 95px;
       }
@@ -240,7 +242,9 @@
     margin: auto;
     width: 50%;
     img {
-      width: 100%;
+      height: 96px;
+      width: 96px;
+      //width: 100%;
       border-radius: 50%;
       border: 2px solid #ffffff;
     }

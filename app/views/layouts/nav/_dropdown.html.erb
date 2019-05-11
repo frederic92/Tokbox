@@ -1,6 +1,7 @@
 <li class="profile-image dropleft">
   <a class="dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" >
-    <img src="http://i.pravatar.cc/50" alt="profile image">
+    <%= image_tag current_user.avatar.variant(resize_to_limit: [96, 96]), id:"user-avatar" %>
+    <!--<img src="http://i.pravatar.cc/50" alt="profile image">-->
   </a>
   <div class="dropdown-menu" aria-labelledby="profileDropdown">
     <%= link_to root_path, class: "dropdown-item" do %>
