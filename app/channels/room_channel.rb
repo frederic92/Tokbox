@@ -83,8 +83,12 @@ class RoomChannel < ApplicationCable::Channel
     Rails.application.credentials.opentok[:api_key]
   end
 
+  def secret_key
+    Rails.application.credentials.opentok[:secret_key]
+  end
+
   def opentok
-    OpenTok::OpenTok.new api_key, Rails.application.credentials.opentok[:secret_key]
+    OpenTok::OpenTok.new api_key, secret_key
   end
 
   def create_session
