@@ -88,7 +88,7 @@ import consumer from "./consumer"
       console.log(session);
       $('#sender-notif-modal').modal("hide");
       // Initialize the publisher for the sender
-      var publisherProperties = {insertMode: "append", width: '100%', height: '100%'};
+      var publisherProperties = {insertMode: "append", width: '100%', height: '100%', videoSource: 'screen'};
       var publisher = OT.initPublisher('publisher', publisherProperties, function (error) {
         if (error) {
           console.log(error);
