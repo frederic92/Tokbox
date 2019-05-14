@@ -88,7 +88,7 @@ import consumer from "./consumer"
       console.log(session);
       $('#sender-notif-modal').modal("hide");
       // Initialize the publisher for the sender
-      var publisherProperties = {insertMode: "append", width: '100%', height: '100%', videoSource: 'screen'};
+      var publisherProperties = {insertMode: "append", width: '100%', height: '100%'};
       var publisher = OT.initPublisher('publisher', publisherProperties, function (error) {
         if (error) {
           console.log(error);
@@ -114,7 +114,7 @@ import consumer from "./consumer"
       // If the connection is successful, publish an audio-video stream.
       session.connect(data['token'], function(error) {
         if (error) {
-          console.log("Error connecting: MBEA", error.name, error.message);
+          console.log("Error connecting:", error.name, error.message);
         } else {
           console.log("Connected to the session.");
           session.publish(publisher, function(error) {
@@ -122,10 +122,18 @@ import consumer from "./consumer"
               console.log(error);
             } else {
               console.log("The sender is publishing a stream");
+              // Stop the publisher from streaming to the session if the user dismiss the modal
+              const closeSessionModal = document.getElementById('close-session-modal');
+              closeSessionModal.addEventListener("click", (event) => {
+                session.unpublish(publisher);
+                console.log("unpublished the publisher");
+              });
             }
           });
         }
       });
+
+
 
 
     }

@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
     // Call the answer method when the answer_btn is clicked.
-    var answer_btn = document.getElementById("answer-call");
+    const answer_btn = document.getElementById("answer-call");
     answer_btn.addEventListener('click', (event) => {
       event.preventDefault();
       var session_id = document.getElementById("session_id").innerHTML;
