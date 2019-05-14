@@ -8,7 +8,7 @@
         <div class="user-card">
           <div class="user-avatar">
             <% if user.avatar.attached? %>
-              <%= image_tag url_for(user.avatar), id:"user-avatar" %>
+              <%= image_tag user.avatar, id:"user-avatar" %>
             <% else %>
               <img id="user-avatar" src="http://i.pravatar.cc/60" alt="profile image">
             <% end %>
