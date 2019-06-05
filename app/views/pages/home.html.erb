@@ -14,7 +14,7 @@
             <% end %>
           </div>
           <div class="user-info">
-            <h5><%= user.first_name %> <%= user.last_name %></h5>
+            <h5><%= user.full_name %></h5>
             <h6><%= user.level %></h6>
           </div>
           <div class="user-links">
@@ -23,7 +23,7 @@
                 <i class="fab fa-github-square"></i>
               <% end %>
 
-              <%= link_to '#', class:'call-icon', data: {id: user.id, name: user.first_name} do %>
+              <%= link_to '#', class:'call-icon', data: {id: user.id, name: user.full_name}  do %>
                 <i class="fas fa-video"></i>
               <% end %>
             </div>

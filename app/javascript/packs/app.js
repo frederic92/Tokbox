@@ -38,10 +38,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     answer_btn.addEventListener('click', (event) => {
       event.preventDefault();
       var session_id = document.getElementById("session_id").innerHTML;
+      var sender_id = document.getElementById('sender_id').innerHTML;
       console.log(session_id);
       console.log("answer btn clicked");
       $('#receiver-notif-modal').modal('hide');
-      cable.answer(session_id);
+      cable.answer(session_id, sender_id);
     });
 
 });

@@ -1,55 +1,22 @@
 @import "./variables";
 
-
+// ========= Bootstrap notification ==========
 .notice, .danger {
   margin: 0px;
   p {
     margin-bottom: 0px;
   }
-}
+}// ========= Bootstrap notification ==========
 
-
-#call_notification {
-  display: none;
-  background-color: green;
-  .notification_message {
-    h5 {
-      color: white;
-    }
-  }
-  .call_notification_btn {
-    .answer_btn {
-      padding: 5px 10px;
-      text-decoration: none;
-      color: white;
-      border-radius: 5px;
-      border-color: blue;
-    }
-  }
-}
-
-#publisher, #subscriber {
-    display: inline-block;
-    width: 300px;
-    height: 300px;
-}
-
-#publisher {
-    border: 2px solid green;
-}
-#subscriber {
-    border: 2px solid red;
-}
 
 
 ////////// ================== AUTH FORM ============//////////////
-
 .form-block {
   @include box-shadow;
-  margin-top: 50px;
+  margin-top: 60px;
   padding: 25px;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: white;
   h1 {
     text-align: center;
     font-weight: 700;
@@ -64,7 +31,7 @@
       box-shadow: none;
       background-color: #E8EBED;
       &:focus {
-        background-color: #ffffff;
+        background-color: white;
         border: 2px solid #E8EBED;
       }
     }
@@ -80,35 +47,38 @@
     }
     .alert-error {
       background-color: red;
-      color: #ffffff;
+      color: white;
       .close {
-        color: #ffffff;
+        color: white;
         margin-left: 3px;
       }
     }
 
   }
-}
-//========================== Auth form =====================
+}//========================== Auth form =====================
+
 
 
 
 
 
 //======================= NAVIGATION==================================
-
 .navbar {
-  background-color: #ffffff !important;
+  background-color: white !important;
   box-shadow: 0 5px 5px -5px #C8CBCC;
+  .fa-asymmetrik {
+    font-size: 46px;
+  }
   i {
     font-size: 18px;
     margin-right: 5px;
     color: #6321E3;
   }
   .navbar-brand {
-    color: #ffffff !important;
+    color: black !important;
     font-weight: 500;
     font-size: 24px;
+    margin-top: 15px;
     margin-right: 0px;
   }
 
@@ -130,7 +100,6 @@
         height: 50px;
         width: 50px;
         border-radius: 50%;
-        //margin-right: 95px;
       }
       .dropdown-menu {
         padding: 0;
@@ -138,12 +107,12 @@
           text-transform: uppercase;
           font-size: 14px;
           font-weight: 500;
-          color: #000000;
+          color: black;
           &:hover {
             background-color: #6321E3 !important;
-            color: #ffffff !important;
+            color: white !important;
             i {
-              color: #ffffff;
+              color: white;
             }
           }
           i {
@@ -161,16 +130,15 @@
       }
       .sign-up {
         background-color: #7B16FF;
-        color: #ffffff;
+        color: white;
         border-color: #7B16FF;
         border-radius: 25px;
         font-weight: 700;
       }
     }
   }
-}
+}//======================= Navigation==================================
 
-//======================= Navigation==================================
 
 // =================================JUMBOTRON====================================
 .jumbotron {
@@ -184,14 +152,14 @@
       margin-bottom: 15px;
       font-weight: 500;
       font-size: 32px;
-      color: #ffffff;
+      color: white;
     }
     p {
       font-size: 13px;
       font-weight: 100;
       line-height: 21px;
       letter-spacing: 2px;
-      color: #ffffff;
+      color: white;
     }
 
     a {
@@ -199,35 +167,73 @@
       text-decoration: none;
       margin-top: 20px !important;
     }
-}
- // ================================JUMBOTRON===============================
+}// ================================JUMBOTRON===============================
 
-//===================== Call Modal =============================
 
+//===================== Modal =============================
 .modal {
   .modal-header {
+    background-color: #121212;
     .fas {
       margin: 4px 0px 0px 10px;
       color: green;
     }
-    #session_id {
+    .fas.fa-video-slash {
+      color: red;
+    }
+    #session_id, #sender_id {
       display: none;
     }
+
+    .modal-title {
+      color: white;
+    }
+
   }
   .modal-footer {
+    background-color: #121212;
+    color: white;
     .fas {
       font-size: 18px;
       color: green;
     }
+
   }
 
 }
-//==================== call modal ============================
 
-//==================== PROFILE MODAL ============================
+#modal-body-session {
+  padding: 0px;
+  height: 400px;
+  .session {
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    #subscriber {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid green;
+    }
+    #publisher {
+      position: absolute;
+      border: 1px solid red;
+      width: 30%;
+      height: 30%;
+      bottom: 0px;
+      right: 0px;
+      z-index: 1000;
 
+    }
+  }
 
-//==================== Profile Modal ============================
+}//==================== Modal ============================
+
 
 //====================== USER CARD ===============================
 .user-card {
@@ -244,9 +250,8 @@
     img {
       height: 96px;
       width: 96px;
-      //width: 100%;
       border-radius: 50%;
-      border: 2px solid #ffffff;
+      border: 2px solid white;
     }
   }
   .user-info {
@@ -287,40 +292,4 @@
    }
 
  }
-}
-//====================== USER CARD ===============================
-
-#modal-body-session {
-  padding: 0px;
-  //position: absolute;
-  height: 400px;
-  .session {
-    background-color: #000000;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    #subscriber {
-      position: relative;
-      top: 0px;
-      left: 0px;
-      //bottom: 0px;
-      //right: 0px;
-      width: 100%;
-      height: 100%;
-      border: 1px solid green;
-    }
-    #publisher {
-      position: absolute;
-      border: 1px solid red;
-      width: 30%;
-      height: 30%;
-      bottom: 0px;
-      right: 0px;
-      z-index: 1000;
-
-    }
-  }
-
-}
+}//====================== USER CARD ===============================

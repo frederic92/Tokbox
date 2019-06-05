@@ -14,34 +14,23 @@ class RoomChannel < ApplicationCable::Channel
   def call(data)
     recipient_id = data['recipient_id']
     recipient_name = data['recipient_name']
-
-    if room = Room.between(current_user.id, recipient_id)[0]
-      session_id = room.session_id
-      token = create_token(session_id)
-      #broadcast_to_sender(session_id, token, current_user.id, recipient_id)
-      broadcast_notif_to_recipient(current_user.first_name, recipient_id, session_id)
-    else
-      @session = opentokSession
-      session_id = @session.session_id
-      token = create_token(session_id)
-      Room.create(session_id: session_id, sender_id: current_user.id, recipient_id: recipient_id)
-      broadcast_notif_to_recipient(current_user.first_name, recipient_id, session_id)
-
-    end
+    @session = opentokSession
+    session_id = @session.session_id
+    broadcast_notif_to_recipient(recipient_id, session_id)
 
 
   end
 
   def answer(data)
     session_id = data["session_id"]
-    # Get the sender id to broadcast to the sender
-    room = Room.where(session_id: session_id)[0]
-    sender_id = room.opposed_user(current_user).id
+    sender_id = data["sender_id"]
     broadcast_session_to_recipient(session_id)
     broadcast_session_to_sender(session_id, sender_id)
   end
 
+
   private
+
 
   # Brodcast the session to the recipient
   def broadcast_session_to_recipient(session_id)
@@ -66,10 +55,11 @@ class RoomChannel < ApplicationCable::Channel
     )
   end
 
-  def broadcast_notif_to_recipient(sender_first_name, recipient_id, session_id)
+  def broadcast_notif_to_recipient(recipient_id, session_id)
     ActionCable.server.broadcast(
       "room_#{recipient_id}",
-      sender_first_name: sender_first_name,
+      sender_first_name: current_user.full_name,
+      sender_id: current_user.id,
       session_id: session_id,
       step: 'receiving the call'
     )
