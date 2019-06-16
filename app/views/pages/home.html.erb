@@ -5,36 +5,12 @@
   <div class="row">
     <% @users.each do |user| %>
       <div class="col-md-3 col-sm-6">
-        <div class="user-card">
-          <div class="user-avatar">
-            <% if user.avatar.attached? %>
-              <%= image_tag user.avatar, id:"user-avatar" %>
-            <% else %>
-              <img id="user-avatar" src="http://i.pravatar.cc/60" alt="profile image">
-            <% end %>
-          </div>
-          <div class="user-info">
-            <h5><%= user.full_name %></h5>
-            <h6><%= user.level %></h6>
-          </div>
-          <div class="user-links">
-            <div class="icons">
-              <%= link_to user.github_link, class:'github-icon' do %>
-                <i class="fab fa-github-square"></i>
-              <% end %>
-
-              <%= link_to '#', class:'call-icon', data: {id: user.id, name: user.full_name}  do %>
-                <i class="fas fa-video"></i>
-              <% end %>
-            </div>
-          </div>
-        </div>
+        <%= render 'pages/home/user-card', user: user %>
       </div>
     <% end %>
   </div>
 
 </div>
-
 
 
 

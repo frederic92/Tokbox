@@ -67,7 +67,7 @@
   background-color: white !important;
   box-shadow: 0 5px 5px -5px #C8CBCC;
   .fa-asymmetrik {
-    font-size: 46px;
+    font-size: 40px;
   }
   i {
     font-size: 18px;
@@ -100,6 +100,9 @@
         height: 50px;
         width: 50px;
         border-radius: 50%;
+      }
+      .dropdown-toggle::before {
+        display: none;
       }
       .dropdown-menu {
         padding: 0;
@@ -173,7 +176,7 @@
 //===================== Modal =============================
 .modal {
   .modal-header {
-    background-color: #121212;
+    //background-color: white;
     .fas {
       margin: 4px 0px 0px 10px;
       color: green;
@@ -181,23 +184,25 @@
     .fas.fa-video-slash {
       color: red;
     }
-    #session_id, #sender_id {
-      display: none;
-    }
 
     .modal-title {
       color: white;
     }
 
   }
-  .modal-footer {
-    background-color: #121212;
-    color: white;
+  .modal-body {
     .fas {
       font-size: 18px;
+      margin-left: 10px;
       color: green;
     }
-
+    #session_id, #sender_id {
+      display: none;
+    }
+  }
+  .modal-footer {
+    //background-color: #121212;
+    //color: white;
   }
 
 }
@@ -218,11 +223,9 @@
       left: 0px;
       width: 100%;
       height: 100%;
-      border: 1px solid green;
     }
     #publisher {
       position: absolute;
-      border: 1px solid red;
       width: 30%;
       height: 30%;
       bottom: 0px;
@@ -251,22 +254,34 @@
       height: 96px;
       width: 96px;
       border-radius: 50%;
-      border: 2px solid white;
     }
   }
   .user-info {
     margin: auto;
     width: 100%;
-    h5 {
+    .user-name {
       text-align: center;
       font-size: 16px;
       font-weight: 500;
+      .appearance {
+        margin-left: 3px;
+        &.offline {
+          display: none;
+        }
+        .fas {
+          color: #2AD99F;
+          font-size: 10px;
+        }
+      }
     }
-    h6 {
-      text-align: center;
-      font-size: 14px;
-      color: #959DA5;
+    .user-state {
+      h6 {
+        text-align: center;
+        font-size: 14px;
+        color: #738CE6;
+      }
     }
+
   }
   .user-links {
     margin: auto;
@@ -282,13 +297,21 @@
         }
       }
       a.call-icon {
+        display: none;
         text-decoration: none;
-        color: green;
+        color: #6321E3;
         margin: 0px 20px;
-        i {
+        &.offline {
+        display: none;
+        }
+        &.online {
+          display: inline-block;
+        }
+        .fa-video {
           font-size: 20px;
         }
       }
+
    }
 
  }

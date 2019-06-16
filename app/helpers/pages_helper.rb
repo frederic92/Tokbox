@@ -8,4 +8,11 @@ module PagesHelper
     end
   end
 
+  def call_icon(user)
+    user.state == "online" ? "pages/home/call_icons/call_icon" : "pages/home/call_icons/call_icon_disabled"
+  end
+
+
+
+
 end

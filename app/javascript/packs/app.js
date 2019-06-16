@@ -30,9 +30,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       })
     }
 
-
-
-
     // Call the answer method when the answer_btn is clicked.
     const answer_btn = document.getElementById("answer-call");
     answer_btn.addEventListener('click', (event) => {
@@ -43,6 +40,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
       console.log("answer btn clicked");
       $('#receiver-notif-modal').modal('hide');
       cable.answer(session_id, sender_id);
+    });
+
+    // Initialize tooltips
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
     });
 
 });

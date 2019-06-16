@@ -1,0 +1,29 @@
+<div class="user-card">
+  <div class="user-avatar">
+    <% if user.avatar.attached? %>
+      <%= image_tag user.avatar, id:"user-avatar" %>
+    <% else %>
+      <img id="user-avatar" src="http://i.pravatar.cc/60" alt="profile image">
+    <% end %>
+  </div>
+  <div class="user-info">
+    <div class="user-name">
+      <%= user.full_name %>
+      <span class="appearance <%= user.state %>" id="appearance<%= user.id %>"><i class="fas fa-circle"></i></span>
+    </div>
+    <div class="user-state">
+      <h6 id="user-state<%= user.id %>"><%= user.state %></h6>
+    </div>
+  </div>
+  <div class="user-links">
+    <div class="icons">
+      <%= link_to user.github_link, class:'github-icon', title: "Github page", data: {toggle: "tooltip"} do %>
+        <i class="fab fa-github-square"></i>
+      <% end %>
+
+      <%= link_to '', class:"call-icon #{user.state}", id:"call-icon#{user.id}", title: "Start a video call with #{user.full_name}", data: {id: user.id, name: user.full_name, toggle: "tooltip"}, remote: true  do %>
+        <i class="fas fa-video"></i>
+      <% end %>
+    </div>
+  </div>
+</div>

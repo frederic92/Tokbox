@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  enum state: { online: 0, offline: 1 } 
   has_one_attached :avatar
 
   def full_name

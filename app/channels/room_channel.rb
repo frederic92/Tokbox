@@ -14,7 +14,7 @@ class RoomChannel < ApplicationCable::Channel
   def call(data)
     recipient_id = data['recipient_id']
     recipient_name = data['recipient_name']
-    @session = opentokSession
+    @session = create_session
     session_id = @session.session_id
     broadcast_notif_to_recipient(recipient_id, session_id)
 
@@ -65,9 +65,6 @@ class RoomChannel < ApplicationCable::Channel
     )
   end
 
-  def opentokSession
-    create_session
-  end
 
   def api_key
     Rails.application.credentials.opentok[:api_key]

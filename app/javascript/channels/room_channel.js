@@ -4,6 +4,7 @@ import consumer from "./consumer"
   connected() {
     // Called when the subscription is ready for use on the server
     console.log('online');
+
   },
 
   disconnected() {
@@ -42,7 +43,7 @@ import consumer from "./consumer"
       console.log(session);
 
       // Initialize the publisher for the recipient
-      var publisherProperties = {insertMode: "append", width: '100%', height: '100%', videoSource: 'screen'};
+      var publisherProperties = {insertMode: "append", width: '100%', height: '100%'};
       const publisher = OT.initPublisher('publisher', publisherProperties, function (error) {
         if (error) {
           console.log(`Couldn't initialize the publisher: ${error}`);
